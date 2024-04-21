@@ -1,0 +1,5 @@
+/docs/build/
+/env/
+*.fasl
+*.so
+docs/.venv/

@@ -1,0 +1,45 @@
+#!/bin/sh
+#|-*- Lisp; lexical-binding: t; encoding: utf-8; fill-column: 90; -*-|#
+#|
+exec ros -Q -- $0 "$@"
+|#
+(progn ;;init forms
+  (ros:ensure-asdf)
+  #+quicklisp (ql:quickload '(cl-splitter
+                              defmain)
+                            :silent t))
+
+(defpackage :ros.script.cl-splitter
+   (:use :cl)
+   (:import-from #:defmain
+                 #:defmain))
+(in-package :ros.script.cl-splitter)
+
+
+(defun analyze (repository &key log token)
+  (declare (ignorable log token))
+  ;; Add some real code here
+  (format t "Analizing ~A~%" repository))
+
+
+(defmain main ((version "Show program version and exit."
+                      :flag t)
+               (log   "Filename to write log to.")
+               (token "GitHub personal access token."
+                      :env-var "TOKEN")
+               &rest repository)
+  "Utility to analyze github repositories."
+
+  (when version
+    (let* ((system (asdf:find-system :cl-splitter))
+           (version (asdf:component-version system)))
+      (format t "Version: ~A~%" version)
+      (uiop:quit 0)))
+
+  ;; Making real work
+  (loop for repo in repository
+        do (analyze repo
+                    :log log
+                    :token token)))
+
+;;;; vim: set ft=lisp ts=2 sw=2 ai tw=90
