@@ -49,9 +49,11 @@
 (defun envy-app-config ()
   "Get the envy configuration for the application."
   (envy:config :cl-splitter))
+
 (defun envy-get (var-name)
   "Get a variable value from the current envy configuration."
   (getf (envy-app-config) var-name))
+
 (defun envy-set (var-name var-value)
   "Set a variable value in the current envy configuration."
   (setf (getf (envy-app-config) var-name)))
@@ -69,12 +71,12 @@
   (envy:defconfig :common       '(:logger t :log-level :INFO))
   (envy:defconfig |development| '(:log-level :DEBUG))
   (envy:defconfig |production|  '(:log-level :INFO))
-
   (initialize-log4cl))
 
 (defun main (&rest args)
   (declare (ignorable args))
   (initialize-app)
-  (core/-main args))
+  (cli/-main args))
+;;;;
 ;;;;
 ;;;; vim: set ft=lisp ts=2 sw=2 ai tw=90

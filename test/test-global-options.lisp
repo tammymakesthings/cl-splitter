@@ -16,7 +16,7 @@
 
 (def-suite* cl-splitter-test/global-opts-test
   :description "cl-splitter global options tests"
-  :in :cl-splitter-test)
+  :in :cl-splitter-test-suite)
 
 (in-suite cl-splitter-test/global-opts-test)
 

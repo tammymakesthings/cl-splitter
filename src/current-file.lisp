@@ -10,7 +10,8 @@
 
 (defpackage #:cl-splitter/current-file
    (:use #:cl
-         #:cl-splitter/internal)
+         #:cl-splitter/internal
+         #:cl-splitter/globals)
    (:export
      #:file-path
      #:file-path!

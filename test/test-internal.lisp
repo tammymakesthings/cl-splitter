@@ -16,7 +16,7 @@
 
 (def-suite* cl-splitter-test/internals-test
   :description "cl-splitter internals tests"
-  :in :cl-splitter-test)
+  :in :cl-splitter-test-suite)
 
 (in-suite cl-splitter-test/internals-test)
 

@@ -16,7 +16,7 @@
 
 (def-suite* cl-splitter-test/current-file-test
   :description "cl-splitter current file options tests"
-  :in :cl-splitter-test)
+  :in :cl-splitter-test-suite)
 
 (in-suite cl-splitter-test/current-file-test)
 

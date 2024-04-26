@@ -6,22 +6,27 @@
 ;;;; Last Update: Time-stamp: <2024-04-26 08:27:27 tammycravit>
 ;;;;
 
+#+quicklisp
+(progn 
+ (ql:quickload '("clingon" "log4cl" "envy"))
+ )
+
 (defsystem cl-splitter
   :version (:read-file-form "version.lisp-expr")
   :author "Tammy Cravit <tammy@tammymakesthings.com>"
+  :maintainer "Tammy Cravit <tammy@tammymakesthings.com>"
+  :mailto "tammy@tammymakesthings.com"
   :license "MIT"
-  :class :package-inferred-system
-  :pathname "src"
-  :depends-on (
-                "cl-splitter/internal"
-                "cl-splitter/globals"
-                "cl-splitter/global-options"
-                "cl-splitter/current-file"
-                "cl-splitter/core"
-                "cl-splitter/engine"
-                "cl-splitter/cli"
-                "cl-splitter/package"
-              )
+  :encoding :utf-8
+
+  :homepage "https://github.com/tammymakesthings/cl-splitter"
+  :source-control (:git "https://github.com/tammymakesthings/cl-splitter")
+  :bug-tracker "https://github.com/tammymakesthings/cl-splitter/issues"
+
+  :depends-on (:clingon 
+               :log4cl 
+               :envy)
+
   :description "Intelligent multi-file split/join in Common Lisp"
   :long-description
     #.(with-open-file (stream (merge-pathnames #p"README.rst"
@@ -35,6 +40,21 @@
           (setf (fill-pointer seq)
                          (read-sequence seq stream))
           seq)))
+
+  :pathname "src"
+  :components ((:file "internal")
+               (:file "global-options" :depends-on ("internal"))
+               (:file "current-file" :depends-on ("internal"))
+               (:file "globals" :depends-on ("internal" "global-options" "current-file"))
+               (:file "core" :depends-on ("globals"))
+               (:file "engine" :depends-on ("core"))
+               (:file "cli" :depends-on ("engine"))
+               (:file "package" :depends-on ("internal" "core" "engine" "cli")))
+
+  :build-operation "program-op" ;; leave as is
+  :build-pathname "bin/clsplitter"
+  :entry-point "cl-splitter/cli:-main"
+
   :in-order-to (
                 (test-op (test-op #:cl-splitter-test))
                 ))

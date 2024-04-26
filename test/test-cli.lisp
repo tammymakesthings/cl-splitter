@@ -16,7 +16,7 @@
 
 (def-suite* cl-splitter-test/cli-test
   :description "cl-splitter command-line interface tests"
-  :in :cl-splitter-test)
+  :in :cl-splitter-test-suite)
 
 (in-suite cl-splitter-test/cli-test)
 

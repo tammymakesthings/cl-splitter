@@ -15,10 +15,10 @@
 (in-package cl-splitter-test/engine)
 
 (def-suite* cl-splitter-test/engine-test
-  :description "cl-splitter engine tests")
+  :description "cl-splitter engine tests"
+  :in :cl-splitter-test-suite)
 
-(in-suite cl-splitter-test/engine-test
-          :in :cl-splitter-test)
+(in-suite cl-splitter-test/engine-test)
 
 ;;;;
 ;;;; vim: set ft=lisp ts=2 sw=2 ai tw=90

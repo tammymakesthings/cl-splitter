@@ -16,7 +16,7 @@
 
 (def-suite* cl-splitter-test/globals-test
   :description "cl-splitter global variables tests"
-  :in :cl-splitter-test)
+  :in :cl-splitter-test-suite)
 
 (in-suite cl-splitter-test/globals-test)
 
