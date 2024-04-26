@@ -3,7 +3,7 @@
 ;;;; File       : cl-splitter.asd
 ;;;; Description: ASDF system definition for cl-splitter system
 ;;;; Created    :
-;;;; Last Update:
+;;;; Last Update: Time-stamp: <2024-04-26 08:27:27 tammycravit>
 ;;;;
 
 (defsystem cl-splitter
@@ -12,7 +12,7 @@
   :license "MIT"
   :class :package-inferred-system
   :pathname "src"
-  :depends-on ( 
+  :depends-on (
                 "cl-splitter/internal"
                 "cl-splitter/globals"
                 "cl-splitter/global-options"
@@ -35,7 +35,9 @@
           (setf (fill-pointer seq)
                          (read-sequence seq stream))
           seq)))
-  :in-order-to ((test-op (test-op #:cl-splitter-test))))
+  :in-order-to (
+                (test-op (test-op #:cl-splitter-test))
+                ))
 
 ;;;;
 ;;;; vim: set ft=lisp ts=2 sw=2 ai tw=90

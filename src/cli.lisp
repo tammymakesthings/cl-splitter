@@ -2,6 +2,8 @@
 ;;;;
 ;;;; File       : src/core.lisp
 ;;;; Description: cl-splitter core code
+;;;;     Created: <>
+;;;; Last Update: Time-stamp: <2024-04-26 08:32:41 tammycravit>
 ;;;;
 
 (in-package #:cl-user)
@@ -12,7 +14,7 @@
          #:cl-splitter/engine
          #:cl-splitter/internal
          )
-   (:export 
+   (:export
      ;------------------------------------------------------------------------
      ; CLI handler functions
      ;------------------------------------------------------------------------
@@ -26,7 +28,7 @@
      #:main-handler
      #:main-options
      #:main-command
-     
+
      ;------------------------------------------------------------------------
      ; Application entrypoint function
      ;------------------------------------------------------------------------
@@ -43,7 +45,7 @@
 
 ;;;;
 ;;;; CLI Handler functions
-;;;; 
+;;;;
 
 (defun split-handler (args))
 (defun split-options ())
@@ -57,7 +59,7 @@
 
 ;;;;
 ;;;; Application Entrypoint
-;;;; 
+;;;;
 
 (defun -main (&rest args)
   )

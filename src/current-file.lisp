@@ -2,14 +2,16 @@
 ;;;;
 ;;;; File       : src/core.lisp
 ;;;; Description: cl-splitter core code
+;;;;     Created: <>
+;;;; Last Update: Time-stamp: <2024-04-26 08:31:18 tammycravit>
 ;;;;
 
 (in-package #:cl-user)
 
 (defpackage #:cl-splitter/current-file
-   (:use #:cl 
+   (:use #:cl
          #:cl-splitter/internal)
-   (:export 
+   (:export
      #:file-path
      #:file-path!
      #:file-exists-p

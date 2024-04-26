@@ -2,6 +2,8 @@
 ;;;;
 ;;;; File       : src/package.lisp
 ;;;; Description: Package configuration and initialization code.
+;;;;     Created: <>
+;;;; Last Update: Time-stamp: <2024-04-26 08:32:02 tammycravit>
 ;;;;
 
 #+quicklisp
@@ -11,11 +13,11 @@
 (in-package #:cl-user)
 
 (defpackage #:cl-splitter
-  (:use #:cl 
-        #:uiop 
-        #:alexandria 
-        #:clingon 
-        #:log4cl 
+  (:use #:cl
+        #:uiop
+        #:alexandria
+        #:clingon
+        #:log4cl
         #:envy
         #:cl-splitter/cli
         #:cl-splitter/core
@@ -25,12 +27,12 @@
         #:cl-splitter/globals
         #:cl-splitter/internal
         )
-  (:export 
-    #:envy-get 
+  (:export
+    #:envy-get
     #:envy-set
     #:initialize-app
     #:main)
-  (:local-nicknames 
+  (:local-nicknames
     (:cg   :clingon)
     (:core :cl-splitter/core)
     (:cli  :cl-splitter/cli)

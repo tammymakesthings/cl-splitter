@@ -1,5 +1,8 @@
+#!/usr/bin/env python3
+# -*- Python; encoding=utf-8; -*-
 """
-Task definitions for pyinvoke to build documentation
+Task definitions for pyinvoke to build documentation.
+Last Updated: Time-stamp: <2024-04-26 08:29:39 tammycravit>
 """
 
 import os
@@ -9,7 +12,7 @@ from pathlib import Path
 from invoke import run
 from invoke.tasks import task
 
-ROOT_PATH = Path(__FILE__).parent
+ROOT_PATH = Path(__file__).parent
 
 @task
 def build(ctx):

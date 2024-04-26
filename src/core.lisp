@@ -1,6 +1,9 @@
 ;; -*- Lisp; lexical-binding: t; fill-column: 90; encoding: utf-8; -*-
 ;;;;
 ;;;; Description: cl-splitter core code
+;;;;     Created: <>
+;;;; Last Update: Time-stamp: <2024-04-26 08:30:51 tammycravit>
+
 ;;;;
 
 (in-package #:cl-user)
@@ -9,7 +12,7 @@
    (:use #:cl
          #:cl-splitter/internal
          #:cl-splitter/globals)
-   (:export 
+   (:export
      #:process-input
      #:log-message
     )
@@ -21,7 +24,7 @@
 
 (in-package cl-splitter/core)
 
-(defun strip-prefix-and-suffix (line)) 
+(defun strip-prefix-and-suffix (line))
 (defun process-input ())
 (defun switch-file ())
 (defun write-next-line (line))

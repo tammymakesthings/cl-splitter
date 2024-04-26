@@ -2,19 +2,21 @@
 ;;;;
 ;;;; File       : src/core.lisp
 ;;;; Description: cl-splitter core code
+;;;;     Created: <>
+;;;; Last Update: Time-stamp: <2024-04-26 08:31:26 tammycravit>
 ;;;;
 
 (in-package #:cl-user)
 
 (defpackage #:cl-splitter/engine
-   (:use #:cl 
+   (:use #:cl
          #:cl-splitter/internal
          #:cl-splitter/core
          #:cl-splitter/current-file
          #:cl-splitter/global-options
          #:cl-splitter/globals
          )
-   (:export 
+   (:export
      #:process-input
      #:switch-file
      #:write-next-line
@@ -31,7 +33,7 @@
 
 (in-package cl-splitter/engine)
 
-(defun strip-prefix-and-suffix (line)) 
+(defun strip-prefix-and-suffix (line))
 (defun process-input ())
 (defun switch-file ())
 (defun write-next-line (line))

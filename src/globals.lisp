@@ -2,20 +2,22 @@
 ;;;;
 ;;;; File       : src/core.lisp
 ;;;; Description: cl-splitter core code
+;;;;     Created: <>
+;;;; Last Update: Time-stamp: <2024-04-26 08:31:32 tammycravit>
 ;;;;
 
 (in-package #:cl-user)
 
 (defpackage #:cl-splitter/globals
-   (:use #:cl 
+   (:use #:cl
          #:cl-splitter/internal
          )
-   (:export 
+   (:export
      #:*global-flags*
      #:*current-file-params*
      #:*current-output-handle*
     )
-  (:local-nicknames 
+  (:local-nicknames
     (:int  :cl-splitter/internal)
     )
   )

@@ -3,7 +3,7 @@
 ;;;; File       : cl-splitter-test.asd
 ;;;; Description: ASDF system definition for cl-splitter unit tests
 ;;;; Created    :
-;;;; Last Update:
+;;;; Last Update: Time-stamp: <2024-04-26 08:27:44 tammycravit>
 ;;;;
 
 (asdf:defsystem cl-splitter-test
@@ -12,6 +12,7 @@
   :class :package-inferred-system
   :pathname "test"
   :depends-on (:fiveam
+               :cl-splitter
                :cl-splitter-test
                "cl-splitter-test/test-internal"
                "cl-splitter-test/test-globals"
@@ -23,7 +24,7 @@
                "cl-splitter-test/test-package")
   :description "Test system for cl-splitter"
 
-  :perform (test-op 
+  :perform (test-op
              :after (op c)
              (symbol-call :fiveam :run!
                           (find-symbol* :cl-splitter :cl-splitter-test))))
